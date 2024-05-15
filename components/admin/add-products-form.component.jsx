@@ -264,7 +264,7 @@ const addproductformcomponent = ({ allCollections }) => {
           </div>
           <div className="flex flex-col">
             <label htmlFor="market_price" className="text-sm leading-6 font-medium">
-              Market Price{" "}-- will appear with a strikethrough <span className="line-through">GHc150</span>
+              Market Price{" "}
             </label>
             <input
               className="border placeholder:text-sm border-black rounded-md px-2 py-1 text-base"
@@ -272,11 +272,26 @@ const addproductformcomponent = ({ allCollections }) => {
               id="market_price"
               placeholder="150.00"
               onChange={handleProductInfoChange}
-              required
             />
+            <span className="text-xs text-black/40 pt-1">This price will be seen with a strikethrough. <span className="line-through">GHc150</span></span>
           </div>
         </div>
-
+        {/* moq fields */}
+        <div className="flex flex-col gap-2 border border-gray-300 rounded-lg p-2">
+          <div className="flex flex-col">
+            <label htmlFor="moq" className="text-sm leading-6 font-medium">
+              MOQ{" "}
+            </label>
+            <input
+              className="border placeholder:text-sm border-black rounded-md px-2 py-1 text-base"
+              type="number"
+              id="moq"
+              placeholder=""
+              onChange={handleProductInfoChange}
+            />
+            <span className="text-xs text-black/40 pt-1">Minimum Order Quantity</span>
+          </div>
+        </div>
         {/* variations */}
         <div>
           <div className="flex flex-col border border-gray-300 rounded-lg p-2">

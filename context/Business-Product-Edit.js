@@ -114,6 +114,7 @@ export const BizProductContextProvider = ({ children }) => {
     // Convert price and market_price to numbers. 
     const numericPrice = parseFloat(productData.price);
     const numericMarketPrice = parseFloat(productData.market_price);
+    const numericMoq = parseFloat(productData.moq);
 
     await addProductToStore(
       {
@@ -131,6 +132,7 @@ export const BizProductContextProvider = ({ children }) => {
         images: imgurls,
         price: numericPrice,  // Convert to number
         market_price: numericMarketPrice,  // Convert to number
+        moq: numericMoq,
       },
         productID
       );
