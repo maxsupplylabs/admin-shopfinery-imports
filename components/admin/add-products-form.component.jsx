@@ -12,8 +12,9 @@ import { getDocumentsInCollectionRealTime } from "@/utils/functions";
 import { PhotoIcon } from '@heroicons/react/24/solid'
 import { Badge } from "@/components/ui/badge"
 import { LuPlus } from "react-icons/lu";
+import { useAllCollections } from "@/hooks/useAllCollections";
 
-const addproductformcomponent = ({ allCollections }) => {
+const addproductformcomponent = () => {
   const [uploadedCollections, setUploadedCollections] = useState([])
 
 
@@ -64,7 +65,35 @@ const addproductformcomponent = ({ allCollections }) => {
     imageSrc,
     setImageSrc,
   } = useBizProductContext();
-  const initialSelectedDepartment = localStorage.getItem("selectedDepartment");
+
+  const addProductInitialSelectedDepartment = localStorage.getItem("addProductSelectedDepartment");
+  const [addProductselectedDepartment, setAddProductSelectedDepartment] = useState(addProductInitialSelectedDepartment || "womensBagsAndLuggage");
+
+  const addProductInitialSelectedCollection = localStorage.getItem("addProductSelectedCollection");
+    const [addProductSelectedCollection, setaddProductSelectedCollection] = useState(
+      addProductInitialSelectedCollection || ""
+    );
+
+    useEffect(() => {
+      // Save the selected department to localStorage whenever it changes
+      localStorage.setItem("addProductSelectedDepartment", addProductselectedDepartment);
+      // Save the selected collection to localStorage whenever it changes
+      localStorage.setItem("addProductSelectedCollection", addProductSelectedCollection);
+  }, [addProductselectedDepartment, addProductSelectedCollection]);
+
+ 
+      // Function to handle dep selection
+      const handleDepartmentClick = (departmentId) => {
+        setAddProductSelectedDepartment(departmentId);
+        setaddProductSelectedCollection("")
+    };
+    // Function to handle collection selection
+    const handleCollectionClick = (collectionId) => {
+      setaddProductSelectedCollection(collectionId);
+
+        // Update the URL query parameter to reflect the selected collection
+        // router.push(`/?col=${collectionId}`, undefined, { shallow: true });
+    };
 
   const handleDepartmentToggle = (departmentId) => {
     if (departments.includes(departmentId)) {
@@ -116,6 +145,15 @@ const addproductformcomponent = ({ allCollections }) => {
 
   useEffect(() => { }, [files, imageSrc]);
 
+  const { cols, isLoading, isError } = useAllCollections();
+
+  if(isLoading) {
+   return <div>Loading...</div>
+  }
+ 
+  if(isError) {
+   return <div>Error fetching data</div>
+  }
   const allDepartments = [
     { id: "womensWatches", name: "Women's Watches" },
     { id: "mensWatches", name: "Men's Watches" },
@@ -141,7 +179,6 @@ const addproductformcomponent = ({ allCollections }) => {
             <span>
               Add product
             </span>
-            {/* <Badge variant="outline" className={"text-[#577590] w-fit"}>{allDepartments.map((department) => department.id === initialSelectedDepartment ? department.name : "")}</Badge> */}
           </h1>
         </div>
         <Button
@@ -347,7 +384,12 @@ const addproductformcomponent = ({ allCollections }) => {
                 id={`department_${department.id}`}
                 type="checkbox"
                 className="h-4 w-4 rounded border-gray-300"
-                onChange={() => handleDepartmentToggle(department.id)}
+                onChange={
+                  () => {
+                    handleDepartmentToggle(department.id)
+                    handleDepartmentClick(department.id);
+                  } 
+                }
                 checked={departments.includes(department.id)}
               />
               <label htmlFor={`department_${department.id}`} className="text-sm leading-6 text-gray-900">{department.name}</label>
@@ -369,7 +411,12 @@ const addproductformcomponent = ({ allCollections }) => {
                 type="checkbox"
                 className="h-4 w-4 rounded border-gray-300"
                 checked={collections.includes(collection.id)}
-                onChange={() => handleCollectionToggle(collection.id)}
+                onChange={
+                  () => {
+                    handleCollectionToggle(collection.id)
+                    handleCollectionClick(collection.id)
+                  } 
+                }
               />
               <label htmlFor={`collection_${collection.id}`} className="text-sm leading-6 text-gray-900">{collection.title}</label>
             </div>
@@ -377,10 +424,11 @@ const addproductformcomponent = ({ allCollections }) => {
         </fieldset>
         <fieldset className="border border-blue-300 rounded-lg p-2">
           <legend className="text-sm font-medium text-blue-600 mb-4">
-            Offers
+            Specifications
           </legend>
           <div className="flex flex-col gap-3">
 
+            {/* I HAVE BEEN ASKED TO REMOVE: BY STORE OWNER */}
             {/* Free Shipping */}
             <div className="relative flex gap-x-3 px-2">
               <div className="flex h-6 items-center">
@@ -396,11 +444,11 @@ const addproductformcomponent = ({ allCollections }) => {
                 <label htmlFor="free-shipping" className="font-medium text-gray-900">
                   Free shipping (when pre-ordered)
                 </label>
-                <p className="text-gray-500 text-xs">An indication will show on this item, to tell customer that they will pay no shipping fee when it is shipped from China to Ghana.</p>
+                <p className="text-gray-500 text-xs">An indication will show on this item, to tell customer that they will pay no shipping fee.</p>
               </div>
             </div>
             {/* Free Delivery */}
-            <div className="relative flex gap-x-3 px-2">
+            {/* <div className="relative flex gap-x-3 px-2">
               <div className="flex h-6 items-center">
                 <input
                   id="free-delivery"
@@ -416,7 +464,7 @@ const addproductformcomponent = ({ allCollections }) => {
                 </label>
                 <p className="text-gray-500 text-xs">An indication will show on this item, to tell customers that they will pay no delivery fee when it is delivered anywhere in the country.</p>
               </div>
-            </div>
+            </div> */}
             {/* Available in Ghana */}
             <div className="relative flex gap-x-3 px-2">
               <div className="flex h-6 items-center">
@@ -436,7 +484,7 @@ const addproductformcomponent = ({ allCollections }) => {
               </div>
             </div>
             {/* Is on Sale */}
-            <div className="relative flex gap-x-3 px-2">
+            {/* <div className="relative flex gap-x-3 px-2">
               <div className="flex h-6 items-center">
                 <input
                   id="is-on-sale"
@@ -452,7 +500,7 @@ const addproductformcomponent = ({ allCollections }) => {
                 </label>
                 <p className="text-gray-500 text-xs">Include this product to the current promotion.</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
         </fieldset>

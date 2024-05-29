@@ -17,7 +17,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Shopfinery Administration",
+  title: "Administration | Authorized Personels Only",
   description: "Manage your shop like a pro.",
 };
 

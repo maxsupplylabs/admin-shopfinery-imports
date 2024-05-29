@@ -1,1 +1,1 @@
-# Samdy Imports Administration
+# Shopfinery Imports Administration

@@ -72,7 +72,7 @@ export default function Page() {
         <Dialog open={open} onOpenChange={setOpen}>
           <div className="fixed right-10 bottom-10 rounded-full">
             <DialogTrigger asChild>
-              <Button variant="outline" className="bg-gray-200 shadow-2xl w-14 h-14 rounded-full">
+              <Button variant="outline" className="bg-blue-200 shadow-2xl w-14 h-14 rounded-full">
                 <LuPlus className="text-5xl" />
               </Button>
             </DialogTrigger>
@@ -105,7 +105,7 @@ export default function Page() {
       <Drawer open={open} onOpenChange={setOpen}>
         <div className="fixed right-10 bottom-10 rounded-full">
           <DrawerTrigger asChild>
-            <Button variant="outline" className="bg-gray-200 shadow-2xl w-14 h-14 rounded-full">
+            <Button variant="outline" className="bg-blue-300 shadow-2xl w-14 h-14 rounded-full">
               <LuPlus className="text-5xl" />
             </Button>
           </DrawerTrigger>

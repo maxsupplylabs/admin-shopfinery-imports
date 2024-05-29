@@ -72,7 +72,7 @@ export default function AdminHeader() {
                 <a
                   href={"/"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/') } // Apply different border color if active
                   )}
                 >
@@ -85,7 +85,7 @@ export default function AdminHeader() {
                 <a
                   href={"/dashboard"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/dashboard') } // Apply different border color if active
                   )}
                 >
@@ -97,7 +97,7 @@ export default function AdminHeader() {
                 <a
                   href={"/orders"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/orders') } // Apply different border color if active
                   )}
                 >
@@ -109,7 +109,7 @@ export default function AdminHeader() {
                 <a
                   href={"/customers"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/customers') } // Apply different border color if active
                   )}
                 >
@@ -122,7 +122,7 @@ export default function AdminHeader() {
                 <a
                   href={"/add-collection"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/add-collection') } // Apply different border color if active
                   )}
                 >
@@ -134,7 +134,7 @@ export default function AdminHeader() {
                 <a
                   href={"/collections"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/collections') } // Apply different border color if active
                   )}
                 >
@@ -148,7 +148,7 @@ export default function AdminHeader() {
                 <a
                   href={"/add-product"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/add-product') } // Apply different border color if active
                   )}
                 >
@@ -160,7 +160,7 @@ export default function AdminHeader() {
                 <a
                   href={"/products"}
                   className={clsx(
-                    "min-w-max h-12 w-full px-4 py-2 inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+                    "min-w-max w-full inline-flex items-center justify-start gap-2 text-sm whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
                     { 'bg-[#f1f1f7] rounded-md': isActive('/products') } // Apply different border color if active
                   )}
                 >

@@ -9,6 +9,7 @@ import {
 import { createContext, useState, useContext } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import confetti from "canvas-confetti";
 
 const Context = createContext();
 
@@ -66,6 +67,13 @@ export const BizProductContextProvider = ({ children }) => {
         collectionID
       );
       toast.success(`Collection added succesfully.`);
+            // Show confetti
+            confetti({
+              particleCount: 300,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: ['#bb0000', '#ffffff', '#00ff00', '#0000ff', '#ffbb00']
+            });
     } catch (e) {
       console.log(e);
     } finally {
@@ -94,9 +102,11 @@ export const BizProductContextProvider = ({ children }) => {
   });
   const [files, setFiles] = useState([]);
   const [imageSrc, setImageSrc] = useState([]);
+  const addProductInitialSelectedDepartment = localStorage.getItem("addProductSelectedDepartment");
+  const addProductInitialSelectedCollection = localStorage.getItem("addProductSelectedCollection");
 
-  const [collections, setCollections] = useState([]);
-  const [departments, setDepartments] = useState([]);
+  const [departments, setDepartments] = useState([addProductInitialSelectedDepartment]);
+  const [collections, setCollections] = useState([addProductInitialSelectedCollection]);
 
 
   // Handle product save
@@ -137,6 +147,13 @@ export const BizProductContextProvider = ({ children }) => {
         productID
       );
       toast.success(`Product saved succesfully.`);
+            // Show confetti
+            confetti({
+              particleCount: 300,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: ['#bb0000', '#ffffff', '#00ff00', '#0000ff', '#ffbb00']
+            });
     } catch (e) {
       console.log(e);
     } finally {
@@ -158,7 +175,7 @@ export const BizProductContextProvider = ({ children }) => {
 
 
 const addDepartment = (departmentId) => {
-  setDepartments((prevDepartment) => [...prevDepartment, departmentId]);
+  setDepartments([ departmentId]);
 };
 
 const removeDepartment = (departmentId) => {
@@ -169,7 +186,7 @@ const removeDepartment = (departmentId) => {
 
 
 const addCollection = (collectionId) => {
-  setCollections((prevCollections) => [...prevCollections, collectionId]);
+  setCollections([collectionId]);
 };
 
 const removeCollection = (collectionId) => {

@@ -23,7 +23,7 @@ export default function Header() {
               "flex text-lg uppercase font-bold md:text-xl"
             )}
           >
-            Samdy Administration
+            Shopfinery Administration
           </Link>
         </div>
 
